@@ -4,15 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-
-    <title>To Do List</title>
+    <title>Enhanced To Do List</title>
   </head>
   <body>
     <div class="top">
-      <h1 class="head">To Do List</h1>
+      <h1 class="head">Enhanced To Do List</h1>
+      
+      <!-- Task Statistics -->
+      <div class="stats">
+        <span id="total-tasks">Total: 0</span>
+        <span id="completed-tasks">Completed: 0</span>
+        <span id="pending-tasks">Pending: 0</span>
+      </div>
+
       <div class="container">
-        <input id="input" type="text" placeholder="Add an Item" />
-        <button id="addToDo-btn">ADD</button>
+        <!-- Add Task Form -->
+        <div class="add-task-form">
+          <input id="input" type="text" placeholder="Add a new task..." />
+          
+          <div class="task-options">
+            <select id="priority" class="priority-select">
+              <option value="low">Low Priority</option>
+              <option value="medium" selected>Medium Priority</option>
+              <option value="high">High Priority</option>
+            </select>
+            
+            <input id="due-date" type="date" class="due-date-input" />
+            
+            <input id="category" type="text" placeholder="Category (optional)" class="category-input" />
+          </div>
+          
+          <button id="addToDo-btn">ADD TASK</button>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="search-filter">
+          <input id="search" type="text" placeholder="Search tasks..." class="search-input" />
+          
+          <div class="filter-options">
+            <select id="filter-priority" class="filter-select">
+              <option value="all">All Priorities</option>
+              <option value="high">High Priority</option>
+              <option value="medium">Medium Priority</option>
+              <option value="low">Low Priority</option>
+            </select>
+            
+            <select id="filter-status" class="filter-select">
+              <option value="all">All Tasks</option>
+              <option value="pending">Pending</option>
+              <option value="completed">Completed</option>
+            </select>
+            
+            <button id="clear-completed-btn" class="clear-btn">Clear Completed</button>
+          </div>
+        </div>
+
+        <!-- Task List -->
         <div class="list" id="list-container"></div>
       </div>
     </div>
